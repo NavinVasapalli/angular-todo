@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import{ Todo } from '../../../models/Todo';
+import{TodoService} from '../../../services/todo.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  
+  todo:Todo[];
+  constructor(private todoservice:TodoService) { }
 
   ngOnInit() {
+  
+    
+  }
+
+  
+  addTodo(todo: Todo){
+
+    this.todoservice.addTodo(todo).subscribe(todo => this.todo.push(todo));
+   
+
+
   }
 
 }

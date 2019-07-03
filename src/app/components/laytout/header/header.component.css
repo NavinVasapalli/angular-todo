@@ -1,0 +1,19 @@
+.header-nav {
+  text-align: center;
+  color: #fff;
+  background-color: #4caf50;
+}
+
+.nav-bar a{
+  background-color: orange;
+  padding: 5px 10px;
+  margin-right: 10px;
+  color: rgb(34, 35, 36);
+  border-radius: 5px;
+  font-weight: bold;
+
+}
+.nav-bar a:hover{
+  cursor: pointer;
+  text-decoration: none;
+}

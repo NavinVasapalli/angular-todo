@@ -13,9 +13,9 @@ todo:Todo[];
   constructor(private todoservice:TodoService) { }
 
   ngOnInit() {
-this.todoservice.getData().subscribe(
-
-  todos11 =>{
+   
+    this.todoservice.getData().subscribe(
+    todos11 =>{
     this.todo = todos11;
   } 
 
@@ -31,9 +31,7 @@ this.todoservice.deleteData(todo).subscribe();
   }
 
   addTodo(todo: Todo){
-
     this.todoservice.addTodo(todo).subscribe(todo => this.todo.push(todo));
-
 
   }
 

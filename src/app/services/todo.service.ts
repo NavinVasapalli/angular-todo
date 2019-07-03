@@ -19,10 +19,9 @@ headers : new HttpHeaders(
 export class TodoService {
 
   constructor(private http:HttpClient) { }
-todosUrl:string = 'https://jsonplaceholder.typicode.com/posts';
+  todosUrl:string = 'https://jsonplaceholder.typicode.com/posts';
   getData():Observable<Todo[]>{
-
-
+    
     return this.http.get<Todo[]>(this.todosUrl);
 
 }
@@ -43,6 +42,7 @@ deleteData(todo:Todo):Observable<Todo>{
 }
 
 addTodo(todo : Todo){
+  console.log("call to add service" + " url" +this.todosUrl  + JSON.stringify(todo));
   return this.http.post<Todo>(this.todosUrl, todo , httpOptions);
 }
 
