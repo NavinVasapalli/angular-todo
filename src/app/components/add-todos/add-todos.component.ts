@@ -13,12 +13,12 @@ export class AddTodosComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
-    const todo = {
+    const todo1 = {
       title: this.title,
       completed: false
     }
 
-    this.addTodo.emit(todo);
+    this.addTodo.emit(todo1);
   }
 
 }
