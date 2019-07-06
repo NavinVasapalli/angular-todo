@@ -10,8 +10,6 @@ import { from } from 'rxjs';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
- 
-
   todo: Todo[] = [];
   students: Student[] = [];
 
@@ -19,20 +17,33 @@ export class TodoComponent implements OnInit {
 
   ngOnInit() {
 
-
-const todoObservable = this.todoservice.addTodoUpdate();
-todoObservable.subscribe((todoData: Todo[]) => {
-  this.todo = todoData;
-
-
-});
-
-
 // fetching date 
 this.todoservice.getData().subscribe(
   todos11 => {
     this.todo = todos11;
-  });
+
+    // console.log("accessing data from component " + JSON.stringify(todos11));
+
+    this.todoservice.myMethod(todos11);
+  }
+  );
+
+
+  const todoObservable = this.todoservice.addTodoUpdate();
+  todoObservable.subscribe((todoData: Todo[]) => {  
+  this.todo = todoData;
+});
+
+
+  
+  
+  
+
+
+
+
+
+
 
   
 // fetching date end
@@ -70,10 +81,9 @@ this.todoservice.getData().subscribe(
 
   addTodoUpdate() {
 
-    console.log("intial todo" );
+  
   //  this.todo.push(todo);
   }
 
 
-  
 }

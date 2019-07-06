@@ -36,8 +36,6 @@ constructor(private  todoService:TodoService) { }
       this.todoService.toggleCompleted(todo).subscribe(
         todo => console.log("service called")
       )
-
-
   }
 
   onDel(todo){
