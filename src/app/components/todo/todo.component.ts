@@ -21,53 +21,15 @@ export class TodoComponent implements OnInit {
 this.todoservice.getData().subscribe(
   todos11 => {
     this.todo = todos11;
-
     // console.log("accessing data from component " + JSON.stringify(todos11));
-
     this.todoservice.myMethod(todos11);
-  }
-  );
-
+  });
 
   const todoObservable = this.todoservice.addTodoUpdate();
   todoObservable.subscribe((todoData: Todo[]) => {  
   this.todo = todoData;
 });
-
-
-  
-  
-  
-
-
-
-
-
-
-
-  
-// fetching date end
-
-  // student demo
-
-  // const studentsObservable = this.todoservice.getStudents();
-
-  // studentsObservable.subscribe((studentsData: Student[]) => {
-  //     this.students = studentsData;
-  // });
-
-//   const todoObservable = this.todoservice.addTodoUpdate();
-//   todoObservable.subscribe((todoData: Todo[]) => {
-//     this.todo = todoData;
-//     console.log("observable : " +   this.todo );
-
-// });
-
-  // student demo
-
-
-
-  }
+ }
 
   
 
@@ -80,7 +42,6 @@ this.todoservice.getData().subscribe(
   }
 
   addTodoUpdate() {
-
   
   //  this.todo.push(todo);
   }

@@ -1,8 +1,30 @@
 
-<div [ngClass]="setClass()">
+<!-- <div [ngClass]="setClass()">
 <p>
   <input (change)="onToggle(todo)" type="checkbox" />
    {{ todo.title }}
    <button (click)="onDel(todo)" class="Del"> x </button>
 </p>
+</div> -->
+
+
+
+
+<div  [ngClass]="setClass()">
+  <div class="card">
+    <div class="card-body custom-card-todo">
+      <h5 class="card-title"> 
+        
+        <!-- <input /> -->
+      
+        <div class="custom-control custom-checkbox mb-3">
+            <input  class="custom-control-input"id={{todo.id}} name="example1" (change)="onToggle(todo)" type="checkbox" >
+            <label class="custom-control-label" for={{todo.id}}>Item Id - {{todo.id}}</label>
+          </div>
+      </h5>
+      <p class="card-text"> {{ todo.title }}</p>
+     
+      <button (click)="onDel(todo)" class="btn btn-sm btn-primary Del"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete </button>
+    </div>
+  </div>
 </div>

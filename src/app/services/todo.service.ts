@@ -47,28 +47,19 @@ export class TodoService {
   myMethod(todoInt:any){
     this.todoFrSer = todoInt;
     // console.log(" ffdrr " + JSON.stringify( this.todoFrSer )
-    
-
   }
 
   // to send to object to todo component
 
- 
-
   getData(): Observable<Todo[]> {
-
-
     //console.log("object before returing in service : " + JSON.stringify(this.http.get<Todo[]>(this.todosUrl)));
     // let obj = this.http.get<Todo[]>(this.todosUrl);
     // console.log("object before returing in service : " + JSON.stringify(obj));
-
-
      return this.http.get<Todo[]>(this.todosUrl);
 
   }
 
   toggleCompleted(todo: Todo): Observable<any> {
-
     const Url = `${this.todosUrl}/${todo.id}`;
     return this.http.put(Url, todo, httpOptions);
 
@@ -80,7 +71,7 @@ export class TodoService {
 
   }
 
-  addTodo(todo: Todo) {
+  addTodo(todo: Todo  ) {
 
     // console.log("todo from headr" + todo);
     // this.students.push({
